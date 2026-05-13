@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chu Chis Billiard - Phụ kiện</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* RESET */
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:#0f0f0f;
+    color:white;
+}
+
+/* BACK */
+.btn-back{
+    position:fixed;
+    top:20px;
+    left:20px;
+    color:gold;
+    text-decoration:none;
+    font-weight:bold;
+    z-index:10;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+               url("image/banner.jpg") center/cover;
+}
+
+.header h1{
+    color:gold;
+    font-size:40px;
+    letter-spacing:3px;
+}
+
+.header p{
+    color:#ccc;
+}
+
+/* SEARCH */
+.search{
+    text-align:center;
+    margin:30px;
+}
+
+.search input{
+    width:320px;
+    padding:12px;
+    border-radius:30px;
+    border:none;
+    background:#1a1a1a;
+    color:white;
+    outline:none;
+}
+
+/* FILTER */
+.filter{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:20px;
+}
+
+.filter button{
+    padding:10px 18px;
+    border:none;
+    background:#1a1a1a;
+    color:white;
+    cursor:pointer;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.filter button:hover{
+    background:gold;
+    color:black;
+}
+
+/* GRID */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    padding:40px;
+}
+
+/* CARD */
+.card{
+    background:#1a1a1a;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    border:1px solid #222;
+    position:relative;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp 0.6s forwards;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* HOVER */
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    border-color:gold;
+    box-shadow:0 10px 30px rgba(255,215,0,0.2);
+}
+
+/* BADGE */
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:red;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* IMG */
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* BODY */
+.card-body{
+    padding:15px;
+    text-align:center;
+}
+
+/* PRICE */
+.price{
+    color:gold;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* BUTTON */
+.card button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:gold;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:0 0 20px 20px;
+}
+
+.card button:hover{
+    background:#ffd700;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:black;
+    margin-top:40px;
+    border-top:1px solid #222;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="Asm1.html" class="btn-back">
+    <i class="fa fa-arrow-left"></i> Trang chủ
+</a>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>PHỤ KIỆN BILLIARD</h1>
+    <p>Găng tay - Bao cơ - Đầu cơ - Phụ kiện</p>
+</div>
+
+<!-- SEARCH -->
+<div class="search">
+    <input type="text" id="searchInput" placeholder="🔍 Tìm phụ kiện...">
+</div>
+
+<!-- FILTER -->
+<div class="filter">
+    <button onclick="filterProduct('all')">Tất cả</button>
+    <button onclick="filterProduct('gangtay')">Găng tay</button>
+    <button onclick="filterProduct('baoco')">Bao cơ</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products" id="productList">
+
+    <div class="card gangtay">
+        <span class="badge">-20%</span>
+        <img src="image/gangtay.jpg">
+        <div class="card-body">
+            <h3>Găng tay bida</h3>
+            <p class="price">150.000đ</p>
+            <button>Mua ngay</button>
+        </div>
+    </div>
+
+    <div class="card baoco">
+        <span class="badge">HOT</span>
+        <img src="image/baoco.jpg">
+        <div class="card-body">
+            <h3>Bao cơ cao cấp</h3>
+            <p class="price">800.000đ</p>
+            <button>Mua ngay</button>
+        </div>
+    </div>
+
+    <div class="card gangtay">
+        <span class="badge">NEW</span>
+        <img src="image/gangtay.jpg">
+        <div class="card-body">
+            <h3>Găng tay Pro</h3>
+            <p class="price">250.000đ</p>
+            <button>Mua ngay</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Chu Chis Billiard</h3>
+</footer>
+
+<script>
+
+/* SEARCH */
+document.getElementById("searchInput").addEventListener("keyup", function(){
+    let filter = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(filter) ? "" : "none";
+    });
+});
+
+/* FILTER */
+function filterProduct(type){
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        if(type === "all"){
+            card.style.display = "";
+        } else {
+            card.style.display = card.classList.contains(type) ? "" : "none";
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>

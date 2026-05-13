@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chu Chis Billiard - Bán Sỉ</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* RESET */
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:#0f0f0f;
+    color:white;
+}
+
+/* BACK */
+.btn-back{
+    position:fixed;
+    top:20px;
+    left:20px;
+    color:gold;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    height:60vh;
+    background:url("image/banner.jpg") center/cover;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+}
+
+.hero h1{
+    color:gold;
+    font-size:45px;
+}
+
+.hero h2{
+    letter-spacing:5px;
+    color:#ccc;
+}
+
+/* INTRO */
+.intro{
+    text-align:center;
+    padding:60px 20px;
+    max-width:800px;
+    margin:auto;
+}
+
+/* PRICE */
+.pricing{
+    text-align:center;
+    padding:50px;
+}
+
+.price-cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.price-card{
+    background:#1a1a1a;
+    padding:30px;
+    border-radius:15px;
+    width:220px;
+    border:1px solid #222;
+    transition:0.3s;
+}
+
+.price-card:hover{
+    transform:translateY(-10px);
+    border-color:gold;
+}
+
+.highlight{
+    border:2px solid gold;
+}
+
+/* BENEFITS */
+.benefits{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin:60px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:#1a1a1a;
+    padding:30px;
+    width:200px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.box i{
+    color:gold;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+/* FORM */
+.form-section{
+    text-align:center;
+    padding:60px 20px;
+}
+
+form{
+    max-width:400px;
+    margin:auto;
+}
+
+.input-group{
+    display:flex;
+    align-items:center;
+    background:#1a1a1a;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+}
+
+.input-group i{
+    color:gold;
+    margin-right:10px;
+}
+
+input{
+    background:none;
+    border:none;
+    color:white;
+    width:100%;
+    outline:none;
+}
+
+textarea{
+    width:100%;
+    background:#1a1a1a;
+    border:none;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:15px;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:gold;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:black;
+    margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="Asm1.html" class="btn-back">
+    <i class="fa-solid fa-arrow-left"></i> Trang chủ
+</a>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>CHU CHIS BILLIARD</h1>
+        <h2>WHOLESALE PROGRAM</h2>
+        <p>Hợp tác đại lý - giá sỉ tốt nhất</p>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+    <h2>Bán sỉ - hợp tác đại lý</h2>
+    <p>
+        Cung cấp cơ bida và phụ kiện với giá sỉ cực tốt cho CLB và đại lý toàn quốc.
+    </p>
+</section>
+
+<!-- PRICE -->
+<section class="pricing">
+    <h2>Chiết khấu</h2>
+
+    <div class="price-cards">
+
+        <div class="price-card">
+            <h3>5 - 10 SP</h3>
+            <p>-5%</p>
+        </div>
+
+        <div class="price-card highlight">
+            <h3>10 - 20 SP</h3>
+            <p>-10%</p>
+        </div>
+
+        <div class="price-card">
+            <h3>20+ SP</h3>
+            <p>Liên hệ</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+
+    <div class="box">
+        <i class="fa-solid fa-box"></i>
+        <h3>Giá tốt</h3>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-truck"></i>
+        <h3>Giao hàng</h3>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-headset"></i>
+        <h3>Hỗ trợ</h3>
+    </div>
+
+</section>
+
+<!-- FORM -->
+<section class="form-section">
+    <h2>Đăng ký đại lý</h2>
+
+    <form id="wholesaleForm">
+
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" id="name" placeholder="Tên của bạn" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fa fa-phone"></i>
+            <input type="text" id="phone" placeholder="SĐT" required>
+        </div>
+
+        <textarea id="message" placeholder="Nhu cầu"></textarea>
+
+        <button type="submit">
+            Gửi yêu cầu
+        </button>
+
+    </form>
+</section>
+
+<footer>
+    <h3>Chu Chis Billiard</h3>
+</footer>
+
+<script>
+document.getElementById("wholesaleForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Gửi thành công!");
+});
+</script>
+
+</body>
+</html>
